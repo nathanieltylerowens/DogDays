@@ -1,0 +1,44 @@
+{
+  "exercise1": {
+    "dogId": "dog1",
+    "exerciseType": "Fetch",
+    "exerciseAmount": "15 min",
+    "exerciseDate": "2020-08-27T15:14:54-05:00",
+    "exerciseComplete":  true
+  },
+  "exercise2": {
+    "dogId": "dog2",
+    "exerciseType": "Fetch",
+    "exerciseAmount": "15 min", 
+    "exerciseDate": "2020-08-27T15:14:54-05:00",
+    "exerciseComplete": true
+  },
+  "exercise3": {
+    "dogId": "dog1",
+    "exerciseType": "Walk",
+    "exerciseAmount": "15 min",
+    "exerciseDate": "2020-08-27T15:14:54-05:00",
+    "exerciseComplete": false
+  },
+  "exercise4": {
+    "dogId": "dog2",
+    "exerciseType": "Play",
+    "exerciseAmount": "15 min",
+    "exerciseDate": "2020-08-27T15:14:54-05:00",
+    "exerciseComplete": false
+  },
+  "exercise5": {
+    "dogId": "dog1",
+    "exerciseType": "Run",
+    "exerciseAmount": "15 min",
+    "exerciseDate": "2020-08-27T15:14:54-05:00",
+    "exerciseComplete": false
+  },
+  "exercise6": {
+    "dogId": "dog3",
+    "exerciseType": "Walk",
+    "exerciseAmount": "15 min",
+    "exerciseDate": "2020-08-27T15:14:54-05:00",
+    "exerciseComplete": true
+  } 
+}

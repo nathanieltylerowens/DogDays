@@ -1,0 +1,44 @@
+{
+  "grooming1": {
+    "dogId": "dog1",
+    "groomingType": "nails",
+    "groomingAmount": "15 min",
+    "groomingDate": "2020-08-27T15:14:54-05:00",
+    "groomingComplete": true
+  },
+  "grooming2": {
+    "dogId": "dog2",
+    "groomingType": "nails",
+    "groomingAmount": "15 min", 
+    "groomingDate": "2020-08-27T15:14:54-05:00",
+    "groomingComplete": true
+  },
+  "grooming3": {
+    "dogId": "dog1",
+    "groomingType": "bath",
+    "groomingAmount": "15 min",
+    "groomingDate": "2020-08-27T15:14:54-05:00",
+    "groomingComplete": false
+  },
+  "grooming4": {
+    "dogId": "dog2",
+    "groomingType": "bath",
+    "groomingAmount": "15 min",
+    "groomingDate": "2020-08-27T15:14:54-05:00",
+    "groomingComplete": false
+  },
+  "grooming5": {
+    "dogId": "dog1",
+    "groomingType": "brush",
+    "groomingAmount": "15 min",
+    "groomingDate": "2020-08-27T15:14:54-05:00",
+    "groomingComplete": false
+  },
+  "grooming6": {
+    "dogId": "dog3",
+    "groomingType": "brush",
+    "groomingAmount": "15 min",
+    "groomingDate": "2020-08-27T15:14:54-05:00",
+    "groomingComplete": true
+  } 
+}

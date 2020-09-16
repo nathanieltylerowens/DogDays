@@ -1,0 +1,38 @@
+{
+  "food1": {
+    "dogId": "dog1",
+    "foodAmount": "1.5 cups",
+    "foodDate": "2020-08-27T15:14:54-05:00",
+    "foodComplete":  true
+  },
+  "food2": {
+    "dogId": "dog2",
+    "foodAmount": "1 cup",
+    "foodDate": "2020-08-27T15:14:54-05:00",
+    "foodComplete": true
+  },
+  "food3": {
+    "dogId": "dog1",
+    "foodAmount": "1.5 cups",
+    "foodDate": "2020-08-27T15:14:54-05:00",
+    "foodComplete": false
+  },
+  "food4": {
+    "dogId": "dog2",
+    "foodAmount": "1 cup",
+    "foodDate": "2020-08-27T15:14:54-05:00",
+    "foodComplete": false
+  },
+  "food5": {
+    "dogId": "dog1",
+    "foodAmount": "1.5 cups",
+    "foodDate": "2020-08-27T15:14:54-05:00",
+    "foodComplete": false
+  },
+  "food6": {
+    "dogId": "dog3",
+    "foodAmount": "1.5 cups",
+    "foodDate": "2020-08-27T15:14:54-05:00",
+    "foodComplete": true
+  } 
+}
