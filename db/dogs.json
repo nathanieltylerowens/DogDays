@@ -1,0 +1,23 @@
+{
+  "dog1": {
+    "uid": "Nate",
+    "dogName": "Waffle",
+    "dogAge": "8 months",
+    "dogBreed": "Great Pyrenees",
+    "dogImage": "https://www.pennstateind.com/mm5/graphics/00000001/PKMAFTP.jpg" 
+  },
+  "dog2": {
+    "uid": "Nate",
+    "dogName": "Dobby",
+    "dogAge": "3",
+    "dogBreed": "Corgi mix",
+    "dogImage": "https://www.pennstateind.com/mm5/graphics/00000001/PKMAFTP.jpg"
+  },
+  "dog3": {
+    "uid": "Jim",
+    "dogName": "farts",
+    "dogAge": "80 years",
+    "dogBreed": "Poop Mix",
+    "dogImage": "https://www.pennstateind.com/mm5/graphics/00000001/PKMAFTP.jpg"
+  } 
+}

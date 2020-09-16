@@ -1,0 +1,38 @@
+{
+  "potty1": {
+    "dogId": "dog1",
+    "pottyType": "pee",
+    "pottyDate": "2020-08-27T15:14:54-05:00",
+    "pottyComplete":  true
+  },
+  "potty2": {
+    "dogId": "dog2",
+    "pottyType": "poop",
+    "pottyDate": "2020-08-27T15:14:54-05:00",
+    "pottyComplete": true
+  },
+  "potty3": {
+    "dogId": "dog1",
+    "pottyType": "poop",
+    "pottyDate": "2020-08-27T15:14:54-05:00",
+    "pottyComplete": false
+  },
+  "potty4": {
+    "dogId": "dog2",
+    "pottyType": "pee",
+    "pottyDate": "2020-08-27T15:14:54-05:00",
+    "pottyComplete": false
+  },
+  "potty5": {
+    "dogId": "dog1",
+    "pottyType": "poop",
+    "pottyDate": "2020-08-27T15:14:54-05:00",
+    "pottyComplete": false
+  },
+  "potty6": {
+    "dogId": "dog3",
+    "pottyType": "pee",
+    "pottyDate": "2020-08-27T15:14:54-05:00",
+    "pottyComplete": true
+  } 
+}
