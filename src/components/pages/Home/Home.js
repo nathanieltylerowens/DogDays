@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { CardDeck } from 'reactstrap';
+
 import authData from '../../../helpers/data/authData';
 import dogsData from '../../../helpers/data/dogsData';
 import DogCard from '../../shared/DogCard';
@@ -9,7 +11,7 @@ class Home extends React.Component {
     dogs: [],
   }
 
-  coomponentDidMount() {
+  componentDidMount() {
     dogsData.getDogsByUid(authData.getUid())
       .then((dogs) => this.setState({ dogs }))
       .catch((err) => console.error('get dogs done broke', err));
@@ -23,7 +25,9 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h1>My Dogs</h1>
-        {dogCards}
+        <CardDeck>
+          {dogCards}
+        </CardDeck>
       </div>
     );
   }
