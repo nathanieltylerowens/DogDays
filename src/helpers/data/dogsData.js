@@ -29,9 +29,12 @@ const createDog = (newDog) => axios.post(`${baseUrl}/dogs.json`, newDog);
 
 const deleteDog = (dogId) => axios.delete(`${baseUrl}/dogs/${dogId}.json`);
 
+const updateDog = (dogId, updatedDog) => axios.put(`${baseUrl}/dogs/${dogId}.json`, updatedDog);
+
 export default {
   getDogsByUid,
   getDogById,
   createDog,
   deleteDog,
+  updateDog,
 };
