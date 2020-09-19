@@ -62,7 +62,6 @@ class App extends React.Component {
             <Navbar authed={authed}/>
             <div className="container">
               <Switch>
-                {/* <PrivateRoute path="/edit/:dogId" component={EditNeeds} authed={authed}/> */}
                 <PrivateRoute path="/edit/:dogId" component={EditDog} authed={authed}/>
                 <PrivateRoute path="/dogs/:dogId" component={SingleDog} authed={authed}/>
                 <PrivateRoute path="/new" component={NewDog} authed={authed}/>
