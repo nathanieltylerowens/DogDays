@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CardDeck } from 'reactstrap';
+import { CardColumns } from 'reactstrap';
 
 import authData from '../../../helpers/data/authData';
 import dogsData from '../../../helpers/data/dogsData';
@@ -25,9 +25,9 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h1>My Dogs</h1>
-        <CardDeck>
+        <CardColumns>
           {dogCards}
-        </CardDeck>
+        </CardColumns>
       </div>
     );
   }
