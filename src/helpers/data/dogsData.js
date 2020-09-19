@@ -25,4 +25,6 @@ const getDogsByUid = (uid) => new Promise((resolve, reject) => {
 
 const getDogById = (dogId) => axios.get(`${baseUrl}/dogs/${dogId}.json`);
 
-export default { getDogsByUid, getDogById };
+const createDog = (newDog) => axios.post(`${baseUrl}/dogs.json`, newDog);
+
+export default { getDogsByUid, getDogById, createDog };
