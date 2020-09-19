@@ -27,4 +27,11 @@ const getDogById = (dogId) => axios.get(`${baseUrl}/dogs/${dogId}.json`);
 
 const createDog = (newDog) => axios.post(`${baseUrl}/dogs.json`, newDog);
 
-export default { getDogsByUid, getDogById, createDog };
+const deleteDog = (dogId) => axios.delete(`${baseUrl}/dogs/${dogId}.json`);
+
+export default {
+  getDogsByUid,
+  getDogById,
+  createDog,
+  deleteDog,
+};

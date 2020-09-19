@@ -11,16 +11,26 @@ class Home extends React.Component {
     dogs: [],
   }
 
-  componentDidMount() {
+  getDogs = () => {
     dogsData.getDogsByUid(authData.getUid())
       .then((dogs) => this.setState({ dogs }))
       .catch((err) => console.error('get dogs done broke', err));
   }
 
+  componentDidMount() {
+    this.getDogs();
+  }
+
+  deleteDog = (dogId) => {
+    dogsData.deleteDog(dogId)
+      .then(() => this.getDogs())
+      .catch((err) => console.error('delete dog done broke', err));
+  }
+
   render() {
     const { dogs } = this.state;
 
-    const dogCards = dogs.map((dog) => <DogCard key={dog.id} dog={dog}/>);
+    const dogCards = dogs.map((dog) => <DogCard key={dog.id} dog={dog} deleteDog={this.deleteDog}/>);
 
     return (
       <div className="Home">

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Link as RRLink,
@@ -11,31 +12,31 @@ import {
 
 import dogShape from '../../helpers/propz/dogShape';
 
-class DogCard extends React.Component {
-  static propTypes = {
-    dog: dogShape.dogShape,
-  }
+const DogCard = (props) => {
+  const { dog, deleteDog } = props;
 
-  render() {
-    const { dog } = this.props;
+  const singleDogLink = `/dogs/${dog.id}`;
 
-    const singleDogLink = `/dogs/${dog.id}`;
-
-    return (
+  return (
       <div>
       <Card>
         <CardImg top width="100%" src={dog.dogImage} alt="Card image cap" />
           <CardBody>
             <CardTitle>{dog.dogName}</CardTitle>
+            <Button tag={RRLink} to={singleDogLink}><i className="fas fa-eye"></i></Button>
             <ButtonGroup>
               <Button><i className="fas fa-edit"></i></Button>
-              <Button tag={RRLink} to={singleDogLink}><i className="fas fa-eye"></i></Button>
+              <Button onClick={() => { deleteDog(dog.id); }}><i className="fas fa-trash"></i></Button>
           </ButtonGroup>
           </CardBody>
       </Card>
     </div>
-    );
-  }
-}
+  );
+};
+
+DogCard.propTypes = {
+  dog: dogShape.dogShape,
+  deleteDog: PropTypes.func.isRequired,
+};
 
 export default DogCard;
