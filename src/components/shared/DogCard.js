@@ -16,16 +16,17 @@ const DogCard = (props) => {
   const { dog, deleteDog } = props;
 
   const singleDogLink = `/dogs/${dog.id}`;
+  const editDogLink = `/edit/${dog.id}`;
 
   return (
-      <div>
+    <div>
       <Card>
         <CardImg top width="100%" src={dog.dogImage} alt="Card image cap" />
           <CardBody>
             <CardTitle>{dog.dogName}</CardTitle>
             <Button tag={RRLink} to={singleDogLink}><i className="fas fa-eye"></i></Button>
             <ButtonGroup>
-              <Button><i className="fas fa-edit"></i></Button>
+              <Button tag={RRLink} to={editDogLink}><i className="fas fa-edit"></i></Button>
               <Button onClick={() => { deleteDog(dog.id); }}><i className="fas fa-trash"></i></Button>
           </ButtonGroup>
           </CardBody>
