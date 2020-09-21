@@ -10,7 +10,6 @@ import {
 } from 'reactstrap';
 
 import authData from '../../../helpers/data/authData';
-
 import dogsData from '../../../helpers/data/dogsData';
 
 class NewDog extends React.Component {
