@@ -20,11 +20,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import dogsData from '../../../helpers/data/dogsData';
 import foodData from '../../../helpers/data/foodData';
+import pottyData from '../../../helpers/data/pottyData';
 
 class SingleDog extends React.Component {
   state = {
     dog: {},
     food: false,
+    potty: false,
   }
 
   getDog = () => {
@@ -55,19 +57,35 @@ class SingleDog extends React.Component {
       .catch((err) => console.error('food check done broke', err));
   }
 
+  pottyCheck = () => {
+    const { dogId } = this.props.match.params;
+
+    pottyData.getPottyByDogId(dogId)
+      .then((res) => {
+        if (res.length > 0) {
+          this.setState({ potty: res[0] });
+        }
+      })
+      .catch((err) => console.error('potty check done broke', err));
+  }
+
   componentDidMount() {
     this.getDog();
     // this.getFood();
     this.foodCheck();
+    this.pottyCheck();
   }
 
   render() {
-    const { dog, food } = this.state;
+    const { dog, food, potty } = this.state;
+
+    const { dogId } = this.props.match.params;
 
     const updateFoodLink = `/food/${food.id}`;
-    const { dogId } = this.props.match.params;
     const newFoodLink = `/newfood/${dogId}`;
 
+    const updatePottyLink = `/potty/${potty.id}`;
+    const newPottyLink = `/newPotty/${dogId}`;
     return (
       <div className="SingleDog">
         <h1>{dog.dogName}</h1>
@@ -87,8 +105,8 @@ class SingleDog extends React.Component {
             food ? (
             <Card>
               <h1><i className="fas fa-hotdog"></i></h1>
-                <CardSubtitle>{food.foodAmount}</CardSubtitle>
-                <CardSubtitle>{moment(food.foodDate).format('MMMM Do, h:mma')}</CardSubtitle>
+                <CardSubtitle>How Much:  {food.foodAmount}</CardSubtitle>
+                <CardSubtitle>Last Feeding At:  {moment(food.foodDate).format('MMMM Do, h:mma')}</CardSubtitle>
                   <ButtonGroup>
                     <Button tag={RRLink} to={updateFoodLink}>Update</Button>
                   </ButtonGroup>
@@ -98,14 +116,21 @@ class SingleDog extends React.Component {
                     <Button tag={RRLink} to={newFoodLink}>Feed 'Em</Button>
                   </ButtonGroup>
             </Card>)}
-            <Card>
+            {
+            potty ? (
+              <Card>
               <h1><i className="fas fa-toilet-paper"></i></h1>
-                <CardSubtitle>{dog.dogAge}</CardSubtitle>
-                <CardSubtitle>{dog.dogBreed}</CardSubtitle>
+                <CardSubtitle>{potty.pottyType}</CardSubtitle>
+                <CardSubtitle>{moment(potty.pottyDate).format('MMMM Do, h:mma')}</CardSubtitle>
                   <ButtonGroup>
-                    <Button tag={RRLink} to="/home">Update</Button>
+                    <Button tag={RRLink} to={updatePottyLink}>Update</Button>
                   </ButtonGroup>
-            </Card>
+            </Card>) : (<Card>
+              <h1><i className="fas fa-toilet-paper"></i></h1>
+                  <ButtonGroup>
+                    <Button tag={RRLink} to={newPottyLink}>Take 'Em Out</Button>
+                  </ButtonGroup>
+            </Card>)}
           </CardGroup>
           <CardGroup>
             <Card>
