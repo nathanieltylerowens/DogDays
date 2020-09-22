@@ -14,8 +14,10 @@ import Home from '../components/pages/Home/Home';
 import Navbar from '../components/pages/Navbar/Navbar';
 import NewDog from '../components/pages/NewDog/NewDog';
 import NewFood from '../components/pages/NewFood/NewFood';
+import NewPotty from '../components/pages/NewPotty/NewPotty';
 import SingleDog from '../components/pages/SingleDog/SingleDog';
 import UpdateFood from '../components/pages/UpdateFood/UpdateFood';
+import UpdatePotty from '../components/pages/UpdatePotty/UpdatePotty';
 
 import firebaseApp from '../helpers/data/connection';
 import './App.scss';
@@ -64,11 +66,13 @@ class App extends React.Component {
             <Navbar authed={authed}/>
             <div className="container">
               <Switch>
+                <PrivateRoute path="/potty/:pottyId" component={UpdatePotty} authed={authed}/>
+                <PrivateRoute path="/newpotty/:dogId" component={NewPotty} authed={authed}/>
                 <PrivateRoute path="/food/:foodId" component={UpdateFood} authed={authed}/>
+                <PrivateRoute path="/newfood/:dogId" component={NewFood} authed={authed}/>
                 <PrivateRoute path="/edit/:dogId" component={EditDog} authed={authed}/>
                 <PrivateRoute path="/dogs/:dogId" component={SingleDog} authed={authed}/>
-                <PrivateRoute path="/new/dog" component={NewDog} authed={authed}/>
-                <PrivateRoute path="/newfood/:dogId" component={NewFood} authed={authed}/>
+                <PrivateRoute path="/new" component={NewDog} authed={authed}/>
                 <PrivateRoute path="/home" component={Home} authed={authed}/>
                 <PublicRoute path="/auth" component={Auth} authed={authed}/>
                 <Redirect from="*" to="/home" />
