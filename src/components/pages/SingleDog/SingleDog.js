@@ -21,12 +21,14 @@ import 'react-datepicker/dist/react-datepicker.css';
 import dogsData from '../../../helpers/data/dogsData';
 import foodData from '../../../helpers/data/foodData';
 import pottyData from '../../../helpers/data/pottyData';
+import exerciseData from '../../../helpers/data/exerciseData';
 
 class SingleDog extends React.Component {
   state = {
     dog: {},
     food: false,
     potty: false,
+    exercise: false,
   }
 
   getDog = () => {
@@ -69,15 +71,33 @@ class SingleDog extends React.Component {
       .catch((err) => console.error('potty check done broke', err));
   }
 
+  exerciseCheck = () => {
+    const { dogId } = this.props.match.params;
+
+    exerciseData.getExerciseByDogId(dogId)
+      .then((res) => {
+        if (res.length > 0) {
+          this.setState({ exercise: res[0] });
+        }
+      })
+      .catch((err) => console.error('exercise check done broke', err));
+  }
+
   componentDidMount() {
     this.getDog();
     // this.getFood();
     this.foodCheck();
     this.pottyCheck();
+    this.exerciseCheck();
   }
 
   render() {
-    const { dog, food, potty } = this.state;
+    const {
+      dog,
+      food,
+      potty,
+      exercise,
+    } = this.state;
 
     const { dogId } = this.props.match.params;
 
@@ -85,7 +105,11 @@ class SingleDog extends React.Component {
     const newFoodLink = `/newfood/${dogId}`;
 
     const updatePottyLink = `/potty/${potty.id}`;
-    const newPottyLink = `/newPotty/${dogId}`;
+    const newPottyLink = `/newpotty/${dogId}`;
+
+    const updateExerciseLink = `/exercise/${exercise.id}`;
+    const newExerciseLink = `/newexercise/${dogId}`;
+
     return (
       <div className="SingleDog">
         <h1>{dog.dogName}</h1>
@@ -106,7 +130,7 @@ class SingleDog extends React.Component {
             <Card>
               <h1><i className="fas fa-hotdog"></i></h1>
                 <CardSubtitle>How Much:  {food.foodAmount}</CardSubtitle>
-                <CardSubtitle>Last Feeding At:  {moment(food.foodDate).format('MMMM Do, h:mma')}</CardSubtitle>
+                <CardSubtitle>Last Feeding At: {moment(food.foodDate).format('MMMM Do, h:mma')}</CardSubtitle>
                   <ButtonGroup>
                     <Button tag={RRLink} to={updateFoodLink}>Update</Button>
                   </ButtonGroup>
@@ -120,8 +144,8 @@ class SingleDog extends React.Component {
             potty ? (
               <Card>
               <h1><i className="fas fa-toilet-paper"></i></h1>
-                <CardSubtitle>{potty.pottyType}</CardSubtitle>
-                <CardSubtitle>{moment(potty.pottyDate).format('MMMM Do, h:mma')}</CardSubtitle>
+                <CardSubtitle>What Kind: {potty.pottyType}</CardSubtitle>
+                <CardSubtitle>Last Taken Out At: {moment(potty.pottyDate).format('MMMM Do, h:mma')}</CardSubtitle>
                   <ButtonGroup>
                     <Button tag={RRLink} to={updatePottyLink}>Update</Button>
                   </ButtonGroup>
@@ -133,14 +157,23 @@ class SingleDog extends React.Component {
             </Card>)}
           </CardGroup>
           <CardGroup>
+          {
+            exercise ? (
             <Card>
               <h1><i className="fas fa-baseball-ball"></i></h1>
-                <CardSubtitle>{dog.dogAge}</CardSubtitle>
-                <CardSubtitle>{dog.dogBreed}</CardSubtitle>
+                <CardSubtitle>What Kind: {exercise.exerciseType}</CardSubtitle>
+                <CardSubtitle>How Long:  {exercise.exerciseAmount}</CardSubtitle>
+                <CardSubtitle>Last Ran At: {moment(exercise.exerciseDate).format('MMMM Do, h:mma')}</CardSubtitle>
                   <ButtonGroup>
-                    <Button tag={RRLink} to="/home">Update</Button>
+                    <Button tag={RRLink} to={updateExerciseLink}>Update</Button>
                   </ButtonGroup>
-            </Card><Card>
+            </Card>) : (<Card>
+              <h1><i className="fas fa-baseball-ball"></i></h1>
+                  <ButtonGroup>
+                    <Button tag={RRLink} to={newExerciseLink}>Ran 'Em</Button>
+                  </ButtonGroup>
+            </Card>)}
+            <Card>
               <h1><i className="fas fa-soap"></i></h1>
                 <CardSubtitle>{dog.dogAge}</CardSubtitle>
                 <CardSubtitle>{dog.dogBreed}</CardSubtitle>

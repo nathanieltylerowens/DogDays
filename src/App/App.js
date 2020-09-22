@@ -13,9 +13,11 @@ import EditDog from '../components/pages/EditDog/EditDog';
 import Home from '../components/pages/Home/Home';
 import Navbar from '../components/pages/Navbar/Navbar';
 import NewDog from '../components/pages/NewDog/NewDog';
+import NewExercise from '../components/pages/NewExercise/NewExercise';
 import NewFood from '../components/pages/NewFood/NewFood';
 import NewPotty from '../components/pages/NewPotty/NewPotty';
 import SingleDog from '../components/pages/SingleDog/SingleDog';
+import UpdateExercise from '../components/pages/UpdateExercise/UpdatedExercise';
 import UpdateFood from '../components/pages/UpdateFood/UpdateFood';
 import UpdatePotty from '../components/pages/UpdatePotty/UpdatePotty';
 
@@ -66,6 +68,8 @@ class App extends React.Component {
             <Navbar authed={authed}/>
             <div className="container">
               <Switch>
+                <PrivateRoute path="/exercise/:exerciseId" component={UpdateExercise} authed={authed}/>
+                <PrivateRoute path="/newexercise/:dogId" component={NewExercise} authed={authed}/>
                 <PrivateRoute path="/potty/:pottyId" component={UpdatePotty} authed={authed}/>
                 <PrivateRoute path="/newpotty/:dogId" component={NewPotty} authed={authed}/>
                 <PrivateRoute path="/food/:foodId" component={UpdateFood} authed={authed}/>
