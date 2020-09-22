@@ -22,6 +22,7 @@ import dogsData from '../../../helpers/data/dogsData';
 import foodData from '../../../helpers/data/foodData';
 import pottyData from '../../../helpers/data/pottyData';
 import exerciseData from '../../../helpers/data/exerciseData';
+import groomingData from '../../../helpers/data/groomingData';
 
 class SingleDog extends React.Component {
   state = {
@@ -29,6 +30,7 @@ class SingleDog extends React.Component {
     food: false,
     potty: false,
     exercise: false,
+    grooming: false,
   }
 
   getDog = () => {
@@ -83,12 +85,25 @@ class SingleDog extends React.Component {
       .catch((err) => console.error('exercise check done broke', err));
   }
 
+  groomingCheck = () => {
+    const { dogId } = this.props.match.params;
+
+    groomingData.getGroomingByDogId(dogId)
+      .then((res) => {
+        if (res.length > 0) {
+          this.setState({ grooming: res[0] });
+        }
+      })
+      .catch((err) => console.error('grooming check done broke', err));
+  }
+
   componentDidMount() {
     this.getDog();
     // this.getFood();
     this.foodCheck();
     this.pottyCheck();
     this.exerciseCheck();
+    this.groomingCheck();
   }
 
   render() {
@@ -97,6 +112,7 @@ class SingleDog extends React.Component {
       food,
       potty,
       exercise,
+      grooming,
     } = this.state;
 
     const { dogId } = this.props.match.params;
@@ -109,6 +125,9 @@ class SingleDog extends React.Component {
 
     const updateExerciseLink = `/exercise/${exercise.id}`;
     const newExerciseLink = `/newexercise/${dogId}`;
+
+    const updateGroomingLink = `/grooming/${grooming.id}`;
+    const newGroomingLink = `/newgrooming/${dogId}`;
 
     return (
       <div className="SingleDog">
@@ -173,14 +192,25 @@ class SingleDog extends React.Component {
                     <Button tag={RRLink} to={newExerciseLink}>Ran 'Em</Button>
                   </ButtonGroup>
             </Card>)}
+            {
+              grooming ? (
             <Card>
               <h1><i className="fas fa-soap"></i></h1>
-                <CardSubtitle>{dog.dogAge}</CardSubtitle>
-                <CardSubtitle>{dog.dogBreed}</CardSubtitle>
+                <CardSubtitle>Last Brushed On: {moment(grooming.brushDate).format('MMMM Do')}</CardSubtitle>
+                <CardSubtitle>Next Brush On: {moment(grooming.brushDate).add(7, 'days').format('MMMM Do')}</CardSubtitle>
+                  <CardSubtitle>Last Bathed On: {moment(grooming.bathDate).format('MMMM Do')}</CardSubtitle>
+                  <CardSubtitle>Next Bath On: {moment(grooming.bathDate).add(14, 'days').format('MMMM Do')}</CardSubtitle>
+                <CardSubtitle>Nails Clipped On: {moment(grooming.nailDate).format('MMMM Do')}</CardSubtitle>
+                <CardSubtitle>Next Clip On: {moment(grooming.nailDate).add(30, 'days').format('MMMM Do')}</CardSubtitle>
                   <ButtonGroup>
-                    <Button tag={RRLink} to="/home">Update</Button>
+                    <Button tag={RRLink} to={updateGroomingLink}>Update</Button>
                   </ButtonGroup>
-            </Card>
+            </Card>) : (<Card>
+              <h1><i className="fas fa-soap"></i></h1>
+                  <ButtonGroup>
+                    <Button tag={RRLink} to={newGroomingLink}>Groomed 'Em</Button>
+                  </ButtonGroup>
+            </Card>)}
           </CardGroup>
         </Col>
       </div>

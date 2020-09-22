@@ -15,10 +15,12 @@ import Navbar from '../components/pages/Navbar/Navbar';
 import NewDog from '../components/pages/NewDog/NewDog';
 import NewExercise from '../components/pages/NewExercise/NewExercise';
 import NewFood from '../components/pages/NewFood/NewFood';
+import NewGrooming from '../components/pages/NewGrooming/NewGrooming';
 import NewPotty from '../components/pages/NewPotty/NewPotty';
 import SingleDog from '../components/pages/SingleDog/SingleDog';
 import UpdateExercise from '../components/pages/UpdateExercise/UpdatedExercise';
 import UpdateFood from '../components/pages/UpdateFood/UpdateFood';
+import UpdateGrooming from '../components/pages/UpdateGrooming/UpdateGrooming';
 import UpdatePotty from '../components/pages/UpdatePotty/UpdatePotty';
 
 import firebaseApp from '../helpers/data/connection';
@@ -68,6 +70,8 @@ class App extends React.Component {
             <Navbar authed={authed}/>
             <div className="container">
               <Switch>
+                <PrivateRoute path="/grooming/:groomingId" component={UpdateGrooming} authed={authed}/>
+                <PrivateRoute path="/newgrooming/:dogId" component={NewGrooming} authed={authed}/>
                 <PrivateRoute path="/exercise/:exerciseId" component={UpdateExercise} authed={authed}/>
                 <PrivateRoute path="/newexercise/:dogId" component={NewExercise} authed={authed}/>
                 <PrivateRoute path="/potty/:pottyId" component={UpdatePotty} authed={authed}/>
