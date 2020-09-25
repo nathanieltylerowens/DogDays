@@ -1,21 +1,23 @@
 import React from 'react';
 import {
-  Link,
   NavLink as RRNavLink,
 } from 'react-router-dom';
 import {
   Navbar,
+  NavbarBrand,
   NavbarToggler,
   Nav,
   NavItem,
   NavLink,
-  Button,
   Collapse,
 } from 'reactstrap';
+import { faCircle, faDog, faWater } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-// import './Navbar.scss';
+
+import './Navbar.scss';
 
 class myNavbar extends React.Component {
   state = {
@@ -44,7 +46,7 @@ class myNavbar extends React.Component {
 
       if (authed) {
         return (
-        <Nav className="ml-auto" navbar>
+        <Nav className="ml-auto"navbar>
           <NavItem>
             <NavLink tag={RRNavLink} to="/home">My Dogs</NavLink>
           </NavItem>
@@ -52,7 +54,7 @@ class myNavbar extends React.Component {
             <NavLink tag={RRNavLink} to="/new">Add Dog</NavLink>
           </NavItem>
           <NavItem>
-            <Button className="nav-link btn btn-light logout-button" onClick={this.logoutClickEvent}>Logout</Button>
+            <NavLink onClick={this.logoutClickEvent}>Logout</NavLink>
           </NavItem>
         </Nav>
         );
@@ -61,8 +63,21 @@ class myNavbar extends React.Component {
     };
 
     return (
-      <Navbar color="light" expand="md">
-        <Link className="navbar-brand" to="/">Dog Days</Link>
+      <Navbar expand="md">
+        <NavbarBrand className="allLogo" tag={RRNavLink} to="/home">Dog
+          <span className="fa-layers fa-fw" transform="up-3">
+            <FontAwesomeIcon
+              icon={faWater}
+              mask={faCircle}
+              transform="down-4 shrink-2"
+              fixedWidth
+            />
+            <FontAwesomeIcon
+            icon={faDog}
+            transform="down-1.5 shrink-3.4"
+            />
+          </span>
+        Days</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>
           {buildNavbar()}

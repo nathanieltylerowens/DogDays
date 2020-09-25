@@ -1,0 +1,42 @@
+$oxford-blue: #00142d;
+$usafa-blue: #125490;
+$fiery-rose: #fe5069;
+$mango: #fec32c;
+$maximum-purple: #75407c;
+$persian-green: #2a9d8f;
+
+// Sub-header: 'Montserrat Alternates', sans-serif;
+// Main Header: 'Josefin Slab', serif;
+
+
+.navbar {
+  background-color: none;
+}
+
+.allLogo {
+  color: #fec32c;
+  font-family: 'Josefin Slab', serif;
+  font-weight: 900;
+  font-size: 30pt;
+}
+.allLogo:hover{
+  color: #2a9d8f;
+}
+.fa-dog{
+  color:#75407c;
+}
+
+.fa-layers {
+  vertical-align: text-bottom;
+  font-size: 1.25em;
+}
+
+.nav-link {
+  font-family:'Montserrat Alternates', sans-serif;
+  font-weight: 500;
+  color: #fe5069;
+}
+
+.nav-link:hover{
+  color: #125490;
+}
