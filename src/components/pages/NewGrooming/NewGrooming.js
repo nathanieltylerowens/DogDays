@@ -12,6 +12,7 @@ import {
 import 'react-datepicker/dist/react-datepicker.css';
 
 import groomingData from '../../../helpers/data/groomingData';
+import './NewGrooming.scss';
 // import dogsData from '../../../helpers/data/dogsData';
 
 class NewGrooming extends React.Component {
@@ -68,30 +69,30 @@ class NewGrooming extends React.Component {
 
     return (
       <div className="NewGrooming">
-        <h1>Edit Dog's Info</h1>
+        <h1>Grooming</h1>
         <Form>
         <FormGroup>
-            <Label htmlFor="brushDate">Last Brushed:</Label>
+            <Label className="datePadding" htmlFor="brushDate">Last Brushed:</Label>
             <Datepicker
             selected={brushDate}
             onChange={this.changeBrushDateEvent}
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="bathDate">Last Bathed:</Label>
+            <Label className="datePadding" htmlFor="bathDate">Last Bathed:</Label>
             <Datepicker
             selected={bathDate}
             onChange={this.changeBathDateEvent}
             />
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="nailDate">Nails Clipped:</Label>
+            <Label className="datePadding" htmlFor="nailDate">Nails Clipped:</Label>
             <Datepicker
             selected={nailDate}
             onChange={this.changeNailDateEvent}
             />
           </FormGroup>
-          <Button className="btn btn-outline-warning" onClick={this.saveGroomingEvent}>Groomed 'Em</Button>
+          <Button className="saveGrooming" onClick={this.saveGroomingEvent}><i className="fas fa-soap"></i></Button>
         </Form>
       </div>
     );

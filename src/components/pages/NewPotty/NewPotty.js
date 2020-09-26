@@ -8,9 +8,12 @@ import {
   FormGroup,
   Label,
   Input,
+  Col,
 } from 'reactstrap';
 
 import 'react-datepicker/dist/react-datepicker.css';
+
+import './NewPotty.scss';
 
 import pottyData from '../../../helpers/data/pottyData';
 
@@ -62,29 +65,35 @@ class NewPotty extends React.Component {
 
     return (
       <div className="NewPotty">
-        <h1>Edit Dog's Info</h1>
+        <h1>Potty</h1>
         <Form>
-          <FormGroup>
+        <Col md={{ size: 6, offset: 3 }}>
+        <FormGroup>
             <Label htmlFor="pottyType">Type:</Label>
             <Input
-            type="text"
-            name="form-control"
+            type="select"
+            name="select"
             id="pottyType"
             value={pottyType}
-            onChange={this.changePottyTypeEvent} />
+            onChange={this.changePottyTypeEvent}>
+              <option>1</option>
+              <option>2</option>
+              <option>1 & 2</option>
+            </Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="pottyDate">When:</Label>
+            <Label className="datePadding" htmlFor="pottyDate">When:</Label>
             <Datepicker
             selected={pottyDate}
-            onChange={this.changeDateEvent}
+            onChange={this.changePottyDateEvent}
             showTimeSelect
             timeFormat="p"
             timeIntervals={15}
             dateFormat="MM/dd h:mm aa"
             />
           </FormGroup>
-          <Button className="btn btn-outline-warning" onClick={this.savePottyEvent}>Take 'Em Out</Button>
+          <Button className="savePotty" onClick={this.savePottyEvent}><i className="fas fa-toilet-paper"></i></Button>
+          </Col>
         </Form>
       </div>
     );

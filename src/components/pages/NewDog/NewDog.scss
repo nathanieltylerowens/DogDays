@@ -1,0 +1,41 @@
+$oxford-blue: #00142d;
+$usafa-blue: #125490;
+$fiery-rose: #fe5069;
+$mango: #fec32c;
+$maximum-purple: #75407c;
+$persian-green: #2a9d8f;
+
+// Sub-header: 'Montserrat Alternates', sans-serif;
+// Main Header: 'Josefin Slab', serif;
+.NewDog{
+  font-family: 'Montserrat Alternates', sans-serif;
+  color:  #fec32c;
+}
+.savePet {
+  font-size: 40pt;
+  color: #125490;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 15px;
+}
+.savePet:hover {
+  font-size: 40pt;
+  color: #fe5069;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 15px;
+}
+.savePet:focus{
+  font-size: 40pt;
+  color: #fe5069;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 15px;
+}
+.savePet:active {
+  font-size: 40pt;
+  color: #fe5069;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 15px;
+}

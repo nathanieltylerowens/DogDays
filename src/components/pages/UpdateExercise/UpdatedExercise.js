@@ -7,11 +7,14 @@ import {
   FormGroup,
   Label,
   Input,
+  Col,
 } from 'reactstrap';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
 import exerciseData from '../../../helpers/data/exerciseData';
+
+import './UpdateExercise.scss';
 
 class EditExercise extends React.Component {
   state = {
@@ -75,28 +78,41 @@ class EditExercise extends React.Component {
 
     return (
       <div className="EditExercise">
-        <h1>Edit Dog's Info</h1>
+        <h1>Exercise</h1>
         <Form>
+        <Col md={{ size: 6, offset: 3 }}>
           <FormGroup>
             <Label htmlFor="exerciseType">Type:</Label>
             <Input
-            type="text"
-            name="form-control"
+            type="select"
+            name="select"
             id="exerciseType"
             value={exerciseType}
-            onChange={this.changeTypeEvent} />
+            onChange={this.changeTypeEvent}>
+              <option>Fetch</option>
+              <option>Run</option>
+              <option>Walk</option>
+              <option>Play</option>
+            </Input>
           </FormGroup>
           <FormGroup>
             <Label htmlFor="exerciseAmount">Amount:</Label>
             <Input
-            type="text"
-            name="form-control"
+            type="select"
+            name="select"
             id="exerciseAmount"
             value={exerciseAmount}
-            onChange={this.changeAmountEvent} />
+            onChange={this.changeAmountEvent}>
+              <option>10 min</option>
+              <option>20 min</option>
+              <option>30 min</option>
+              <option>40 min</option>
+              <option>50 min</option>
+              <option>60 min</option>
+            </Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="exerciseDate">When:</Label>
+            <Label className="datePadding" htmlFor="exerciseDate">When:</Label>
             <Datepicker
             selected={exerciseDate}
             onChange={this.changeDateEvent}
@@ -106,7 +122,8 @@ class EditExercise extends React.Component {
             dateFormat="MM/dd h:mm aa"
             />
           </FormGroup>
-          <Button className="btn btn-outline-warning" onClick={this.updateExerciseEvent}>Ran 'Em</Button>
+          </Col>
+          <Button className="saveExercise" onClick={this.updateExerciseEvent}><i className="fas fa-baseball-ball"></i></Button>
         </Form>
       </div>
     );

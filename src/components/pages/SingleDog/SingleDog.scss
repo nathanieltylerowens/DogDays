@@ -1,0 +1,295 @@
+$oxford-blue: #00142d;
+$usafa-blue: #125490;
+$fiery-rose: #fe5069;
+$mango: #fec32c;
+$maximum-purple: #75407c;
+$persian-green: #2a9d8f;
+
+// Sub-header: 'Montserrat Alternates', sans-serif;
+// Main Header: 'Josefin Slab', serif;
+
+.singleImage{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 500px;
+  height: 500px;
+  margin: 0;
+  padding: 0;
+}
+.imageCard {
+  width: 500px;
+  height: 500px;
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+  margin: 0;
+}
+.foodInfoUpdate{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #125490;
+}
+.foodInfoUpdate a{
+  color: #125490;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.foodInfoUpdate a:hover{
+  color:#fec32c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.foodInfoUpdate a:focus{
+  color:transparent;
+  padding: 10px;
+  background-color: #75407c;
+  border: transparent;
+  font-size: 30pt;
+}
+.foodInfoNew{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #125490;
+}
+.foodInfoNew a{
+  color: #125490;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.foodInfoNew a:hover{
+  color:#fec32c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.foodInfoNew a:focus{
+  color:transparent;
+  padding: 10px;
+  background-color: #75407c;
+  border: transparent;
+  font-size: 30pt;
+}
+.pottyInfoUpdate{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #75407c;
+}
+.pottyInfoUpdate a{
+  color: #75407c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.pottyInfoUpdate a:hover{
+  color: #fec32c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.pottyInfoUpdate a:focus{
+  color: transparent;
+  padding: 10px;
+  background-color: #75407c;
+  border: transparent;
+  font-size: 30pt;
+}
+.pottyInfoNew {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #75407c;
+}
+.pottyInfoNew a{
+  color: #75407c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.pottyInfoNew a:hover{
+  color: #fec32c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.pottyInfoNew a:focus{
+  color: transparent;
+  padding: 10px;
+  background-color: #75407c;
+  border: transparent;
+  font-size: 30pt;
+}
+.exerciseInfoUpdate{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #2a9d8f;
+}
+.exerciseInfoUpdate a{
+  color: #2a9d8f;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.exerciseInfoUpdate a:hover{
+  color: #fec32c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.exerciseInfoUpdate a:focus{
+  color: transparent;
+  padding: 10px;
+  background-color: #75407c;
+  border: transparent;
+  font-size: 30pt;
+}
+.exerciseInfoNew {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #2a9d8f;
+}
+.exerciseInfoNew a{
+  color: #2a9d8f;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.exerciseInfoNew a:hover{
+  color: #fec32c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.exerciseInfoNew a:focus{
+  color: transparent;
+  padding: 10px;
+  background-color: #75407c;
+  border: transparent;
+  font-size: 30pt;
+}
+.groomingInfoUpdate{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color:#fe5069;
+  
+}
+.groomingInfoUpdate a{
+  color:#fe5069;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.groomingInfoUpdate a:hover{
+  color: #fec32c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.groomingInfoUpdate a:focus{
+  color: transparent;
+  padding: 10px;
+  background-color: #75407c;
+  border: transparent;
+  font-size: 30pt;
+}
+.groomingInfoNew {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color:#fe5069;
+  
+}
+.groomingInfoNew a{
+  color:#fe5069;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.groomingInfoNew a:hover{
+  color: #fec32c;
+  padding: 10px;
+  background-color: transparent;
+  border: transparent;
+  font-size: 30pt;
+}
+.groomingInfoNew a:focus{
+  color: transparent;
+  padding: 10px;
+  background-color: #75407c;
+  border: transparent;
+  font-size: 30pt;
+}
+.foodWords{
+  padding: 20px 0px 0px 0px;
+}
+.pottyWords{
+  padding: 20px 0px 0px 0px;
+}
+.exerciseWords{
+  padding: 20px 0px 0px 0px;
+}
+.groomingWords{
+  padding: 20px 0px 0px 0px;
+}
+.lastAt{
+  font-style: italic;
+  font-weight: bolder;
+  padding: 10px 0px 10px 15px;
+}
+.mainCardBody{
+  background-color: transparent;
+  padding: 0px;
+  border: transparent;
+  font-size: 13pt;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.mainCard{
+  border: transparent;
+  background-color: transparent;
+}
+.nameSub{
+  padding-left: 20px;
+}
+.singleHeader{
+  font-family: 'Josefin Slab', serif;
+  color: #fec32c;
+  font-weight: 900;
+  font-size: 40pt;
+  text-transform: uppercase;
+  letter-spacing: 12pt;
+  margin: 0;
+  padding: 0px;
+}
+.SingleDog{
+  width: 100%;
+}
+.mainCardText {
+  font-family: 'Josefin Slab', serif;
+  font-size: 14pt;
+  text-align: left;
+  color:#75407c;
+  font-style: italic;
+}

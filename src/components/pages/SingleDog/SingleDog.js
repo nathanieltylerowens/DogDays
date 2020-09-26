@@ -7,13 +7,11 @@ import {
 
 import {
   Card,
-  CardBody,
-  CardGroup,
   CardSubtitle,
   CardImg,
   ButtonGroup,
   Button,
-  Col,
+  Row, CardGroup, Col,
 } from 'reactstrap';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -23,6 +21,8 @@ import foodData from '../../../helpers/data/foodData';
 import pottyData from '../../../helpers/data/pottyData';
 import exerciseData from '../../../helpers/data/exerciseData';
 import groomingData from '../../../helpers/data/groomingData';
+
+import './SingleDog.scss';
 
 class SingleDog extends React.Component {
   state = {
@@ -131,89 +131,90 @@ class SingleDog extends React.Component {
 
     return (
       <div className="SingleDog">
-        <h1>{dog.dogName}</h1>
-        <Col>
-          <Card>
-            <CardImg top width="40%" src={dog.dogImage} alt="Card image cap" />
-              <CardBody>
-                  <CardSubtitle>{dog.dogName}'s Age:  {dog.dogAge}</CardSubtitle>
-                  <CardSubtitle>{dog.dogName}'s Breed:  {dog.dogBreed}</CardSubtitle>
-                <ButtonGroup>
-                  <Button tag={RRLink} to="/home">Return</Button>
-                </ButtonGroup>
-              </CardBody>
-          </Card>
+        <h1 className="singleHeader">{dog.dogName}</h1>
+          <Card className="mainCard">
           <CardGroup>
+            <Card className="imageCard">
+            <CardImg src={dog.dogImage} alt="Card image cap" className="singleImage" />
+            </Card>
+              <Card className="mainCardBody">
+                  <Row className="mainCardText">
+                    <CardSubtitle>
+                      Age:  {dog.dogAge}
+                    </CardSubtitle>
+                    <CardSubtitle className="nameSub">
+                      Breed:  {dog.dogBreed}
+                    </CardSubtitle>
+                  </Row>
             {
             food ? (
-            <Card>
-              <h1><i className="fas fa-hotdog"></i></h1>
-                <CardSubtitle>How Much:  {food.foodAmount}</CardSubtitle>
-                <CardSubtitle>Last Feeding At: {moment(food.foodDate).format('MMMM Do, h:mma')}</CardSubtitle>
-                  <ButtonGroup>
-                    <Button tag={RRLink} to={updateFoodLink}>Update</Button>
-                  </ButtonGroup>
-            </Card>) : (<Card>
-              <h1><i className="fas fa-hotdog"></i></h1>
-                  <ButtonGroup>
-                    <Button tag={RRLink} to={newFoodLink}>Feed 'Em</Button>
-                  </ButtonGroup>
-            </Card>)}
+              <Row className="foodInfoUpdate">
+                <ButtonGroup>
+                    <Button className="foodIcon" tag={RRLink} to={updateFoodLink}><i className="fas fa-hotdog"></i></Button>
+                </ButtonGroup>
+                <Col className="foodWords">
+                  <CardSubtitle>How Much:  {food.foodAmount}</CardSubtitle>
+                  <CardSubtitle className="lastAt">Last Feeding At: {moment(food.foodDate).format('MMMM Do, h:mma')}</CardSubtitle>
+                </Col>
+                </Row>) : (<Row className="foodInfoNew">
+                      <ButtonGroup>
+                        <Button tag={RRLink} to={newFoodLink}><i className="fas fa-hotdog"></i></Button>
+                      </ButtonGroup>
+                    </Row>)}
             {
             potty ? (
-              <Card>
-              <h1><i className="fas fa-toilet-paper"></i></h1>
-                <CardSubtitle>What Kind: {potty.pottyType}</CardSubtitle>
-                <CardSubtitle>Last Taken Out At: {moment(potty.pottyDate).format('MMMM Do, h:mma')}</CardSubtitle>
-                  <ButtonGroup>
-                    <Button tag={RRLink} to={updatePottyLink}>Update</Button>
+              <Row className="pottyInfoUpdate">
+                <ButtonGroup>
+                    <Button className="pottyIcon" tag={RRLink} to={updatePottyLink}><i className="fas fa-toilet-paper"></i></Button>
                   </ButtonGroup>
-            </Card>) : (<Card>
-              <h1><i className="fas fa-toilet-paper"></i></h1>
+                <Col className="pottyWords">
+                  <CardSubtitle>What Kind: {potty.pottyType}</CardSubtitle>
+                  <CardSubtitle className="lastAt">Last Taken Out At: {moment(potty.pottyDate).format('MMMM Do, h:mma')}</CardSubtitle>
+                </Col>
+              </Row>) : (<Row className="pottyInfoNew">
                   <ButtonGroup>
-                    <Button tag={RRLink} to={newPottyLink}>Take 'Em Out</Button>
+                    <Button tag={RRLink} to={newPottyLink}><i className="fas fa-toilet-paper"></i></Button>
                   </ButtonGroup>
-            </Card>)}
-          </CardGroup>
-          <CardGroup>
+              </Row>)}
           {
             exercise ? (
-            <Card>
-              <h1><i className="fas fa-baseball-ball"></i></h1>
+            <Row className="exerciseInfoUpdate">
+              <ButtonGroup>
+                <Button className="exerciseIcon" tag={RRLink} to={updateExerciseLink}><i className="fas fa-baseball-ball"></i></Button>
+              </ButtonGroup>
+              <Col className="exerciseWords">
                 <CardSubtitle>What Kind: {exercise.exerciseType}</CardSubtitle>
                 <CardSubtitle>How Long:  {exercise.exerciseAmount}</CardSubtitle>
-                <CardSubtitle>Last Ran At: {moment(exercise.exerciseDate).format('MMMM Do, h:mma')}</CardSubtitle>
+                <CardSubtitle className="lastAt">Last Ran At: {moment(exercise.exerciseDate).format('MMMM Do, h:mma')}</CardSubtitle>
+              </Col>
+            </Row>) : (<Row className="exerciseInfoNew">
                   <ButtonGroup>
-                    <Button tag={RRLink} to={updateExerciseLink}>Update</Button>
+                    <Button tag={RRLink} to={newExerciseLink}><i className="fas fa-baseball-ball"></i></Button>
                   </ButtonGroup>
-            </Card>) : (<Card>
-              <h1><i className="fas fa-baseball-ball"></i></h1>
-                  <ButtonGroup>
-                    <Button tag={RRLink} to={newExerciseLink}>Ran 'Em</Button>
-                  </ButtonGroup>
-            </Card>)}
+            </Row>)}
             {
               grooming ? (
-            <Card>
-              <h1><i className="fas fa-soap"></i></h1>
+            <Row className="groomingInfoUpdate">
+              <ButtonGroup>
+                <Button className="groomIcon" tag={RRLink} to={updateGroomingLink}><i className="fas fa-soap"></i></Button>
+              </ButtonGroup>
+              <Col className="groomingWords">
                 <CardSubtitle>Last Brushed On: {moment(grooming.brushDate).format('MMMM Do')}</CardSubtitle>
-                <CardSubtitle>Next Brush On: {moment(grooming.brushDate).add(7, 'days').format('MMMM Do')}</CardSubtitle>
+                <CardSubtitle className="lastAt">Next Brush On: {moment(grooming.brushDate).add(7, 'days').format('MMMM Do')}</CardSubtitle>
                   <CardSubtitle>Last Bathed On: {moment(grooming.bathDate).format('MMMM Do')}</CardSubtitle>
-                  <CardSubtitle>Next Bath On: {moment(grooming.bathDate).add(14, 'days').format('MMMM Do')}</CardSubtitle>
+                  <CardSubtitle className="lastAt">Next Bath On: {moment(grooming.bathDate).add(14, 'days').format('MMMM Do')}</CardSubtitle>
                 <CardSubtitle>Nails Clipped On: {moment(grooming.nailDate).format('MMMM Do')}</CardSubtitle>
-                <CardSubtitle>Next Clip On: {moment(grooming.nailDate).add(30, 'days').format('MMMM Do')}</CardSubtitle>
+                <CardSubtitle className="lastAt">Next Clip On: {moment(grooming.nailDate).add(30, 'days').format('MMMM Do')}</CardSubtitle>
+              </Col>
+            </Row>) : (<Row className="groomingInfoNew">
                   <ButtonGroup>
-                    <Button tag={RRLink} to={updateGroomingLink}>Update</Button>
+                    <Button tag={RRLink} to={newGroomingLink}><h1><i className="fas fa-soap"></i></h1></Button>
                   </ButtonGroup>
-            </Card>) : (<Card>
-              <h1><i className="fas fa-soap"></i></h1>
-                  <ButtonGroup>
-                    <Button tag={RRLink} to={newGroomingLink}>Groomed 'Em</Button>
-                  </ButtonGroup>
-            </Card>)}
+                 </Row>)}
+            </Card>
           </CardGroup>
-        </Col>
-      </div>
+      </Card>
+    </div>
     );
   }
 }
