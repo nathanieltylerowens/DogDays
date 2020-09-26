@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { CardColumns } from 'reactstrap';
+import { CardDeck } from 'reactstrap';
 
 import authData from '../../../helpers/data/authData';
 import dogsData from '../../../helpers/data/dogsData';
 import DogCard from '../../shared/DogCard';
+
+import './Home.scss';
 
 class Home extends React.Component {
   state = {
@@ -35,9 +37,9 @@ class Home extends React.Component {
     return (
       <div className="Home">
         <h1>My Dogs</h1>
-        <CardColumns>
+        <CardDeck>
           {dogCards}
-        </CardColumns>
+        </CardDeck>
       </div>
     );
   }
