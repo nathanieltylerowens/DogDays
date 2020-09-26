@@ -45,7 +45,18 @@ $persian-green: #2a9d8f;
   color:  #fec32c;
   font-style: italic;
 }
-
+.homeEdit:focus{
+  background-color: transparent;
+  border: transparent;
+  color:  #fec32c;
+  font-style: italic;
+}
+.homeEdit:active{
+  background-color: transparent;
+  border: transparent;
+  color:  #fec32c;
+  font-style: italic;
+}
 .homeDelete{
   background-color: transparent;
   border: transparent;

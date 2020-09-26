@@ -1,0 +1,45 @@
+$oxford-blue: #00142d;
+$usafa-blue: #125490;
+$fiery-rose: #fe5069;
+$mango: #fec32c;
+$maximum-purple: #75407c;
+$persian-green: #2a9d8f;
+
+// Sub-header: 'Montserrat Alternates', sans-serif;
+// Main Header: 'Josefin Slab', serif;
+.EditGrooming{
+  font-family: 'Montserrat Alternates', sans-serif;
+  color:  #2a9d8f;
+  justify-content: center;
+}
+.saveGrooming {
+  font-size: 40pt;
+  color: #fec32c;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 15px;
+}
+.saveGrooming:hover {
+  font-size: 40pt;
+  color: #fe5069;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 15px;
+}
+.saveGrooming:focus{
+  font-size: 40pt;
+  color: #fe5069;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 15px;
+}
+.saveGrooming:active {
+  font-size: 40pt;
+  color: #fe5069;
+  background-color: transparent;
+  border: transparent;
+  padding-top: 15px;
+}
+.datePadding{
+  padding-right: 10px;
+}

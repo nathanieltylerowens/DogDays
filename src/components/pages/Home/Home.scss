@@ -10,9 +10,11 @@ $persian-green: #2a9d8f;
 
 .Home h1{
   font-family: 'Josefin Slab', serif;
+  color: #75407c;
   font-weight: 900;
-  color: $maximum-purple;
-  font-size: 50pt;
+  font-size: 40pt;
+  text-transform: uppercase;
+  letter-spacing: 12pt;
 }
 .card-deck {
   justify-content: center;

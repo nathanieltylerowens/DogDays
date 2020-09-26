@@ -8,9 +8,11 @@ import {
   FormGroup,
   Label,
   Input,
+  Col,
 } from 'reactstrap';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import './NewFood.scss';
 
 import foodData from '../../../helpers/data/foodData';
 // import dogsData from '../../../helpers/data/dogsData';
@@ -63,19 +65,31 @@ class NewFood extends React.Component {
 
     return (
       <div className="NewFood">
-        <h1>Edit Dog's Info</h1>
+        <h1>Food</h1>
         <Form>
+        <Col md={{ size: 6, offset: 3 }}>
           <FormGroup>
             <Label htmlFor="foodAmount">Amount:</Label>
             <Input
-            type="text"
-            name="form-control"
+            type="select"
+            name="select"
             id="foodAmount"
             value={foodAmount}
-            onChange={this.changeAmountEvent} />
+            onChange={this.changeAmountEvent}>
+              <option>.5 cup</option>
+              <option>1 cup</option>
+              <option>1.5 cups</option>
+              <option>2 cups</option>
+              <option>2.5 cups</option>
+              <option>3 cups</option>
+              <option>3.5 cups</option>
+              <option>4 cups</option>
+              <option>4.5 cups</option>
+              <option>5 cups</option>
+            </Input>
           </FormGroup>
           <FormGroup>
-            <Label htmlFor="foodDate">When:</Label>
+            <Label className="datePadding" htmlFor="foodDate">When:</Label>
             <Datepicker
             selected={foodDate}
             onChange={this.changeDateEvent}
@@ -85,7 +99,8 @@ class NewFood extends React.Component {
             dateFormat="MM/dd h:mm aa"
             />
           </FormGroup>
-          <Button className="btn btn-outline-warning" onClick={this.saveFoodEvent}>Fed 'Em</Button>
+        </Col>
+          <Button className="saveFood" onClick={this.saveFoodEvent}><i className="fas fa-hotdog"></i></Button>
         </Form>
       </div>
     );

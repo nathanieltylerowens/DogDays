@@ -7,10 +7,14 @@ import {
   FormGroup,
   Label,
   Input,
+  Row,
+  Col,
 } from 'reactstrap';
 
 import authData from '../../../helpers/data/authData';
 import dogsData from '../../../helpers/data/dogsData';
+
+import './NewDog.scss';
 
 class NewDog extends React.Component {
   state = {
@@ -72,26 +76,32 @@ class NewDog extends React.Component {
       <div className="NewDog">
         <h1>Add a Dog</h1>
         <Form>
+        <Row>
+        <Col md={6}>
           <FormGroup>
             <Label htmlFor="dogName">Name</Label>
             <Input
             type="text"
             name="form-control"
             id="dogName"
-            placeholder="Dale Jr."
             value={dogName}
             onChange={this.changeNameEvent} />
           </FormGroup>
+        </Col>
+        <Col md={6}>
           <FormGroup>
             <Label htmlFor="dogImage">Photo</Label>
             <Input
             type="text"
             name="form-control"
             id="dogImage"
-            placeholder="https://i.imgur.com/LRoLTlK.jpeg"
             value={dogImage}
             onChange={this.changeImageEvent} />
           </FormGroup>
+        </Col>
+      </Row>
+        <Row>
+        <Col md={6}>
           <FormGroup>
             <Label htmlFor="dogAge">Age</Label>
             <Input
@@ -101,6 +111,8 @@ class NewDog extends React.Component {
             value={dogAge}
             onChange={this.changeAgeEvent} />
           </FormGroup>
+        </Col>
+        <Col md={6}>
           <FormGroup>
             <Label htmlFor="dogBreed">Breed</Label>
             <Input
@@ -110,7 +122,9 @@ class NewDog extends React.Component {
             value={dogBreed}
             onChange={this.changeBreedEvent} />
           </FormGroup>
-          <Button className="btn btn-outline-warning" onClick={this.saveDogEvent}>Add Dog</Button>
+        </Col>
+      </Row>
+          <Button className="savePet" onClick={this.saveDogEvent}><i className="fas fa-bone"></i></Button>
         </Form>
       </div>
     );

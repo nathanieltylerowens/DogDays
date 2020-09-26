@@ -6,7 +6,11 @@ import {
   FormGroup,
   Label,
   Input,
+  Col,
+  Row,
 } from 'reactstrap';
+
+import './EditDog.scss';
 
 import dogsData from '../../../helpers/data/dogsData';
 
@@ -82,6 +86,8 @@ class EditDog extends React.Component {
       <div className="EditDog">
         <h1>Edit Dog's Info</h1>
         <Form>
+        <Row>
+        <Col md={6}>
           <FormGroup>
             <Label htmlFor="dogName">Name</Label>
             <Input
@@ -91,6 +97,8 @@ class EditDog extends React.Component {
             value={dogName}
             onChange={this.changeNameEvent} />
           </FormGroup>
+        </Col>
+        <Col md={6}>
           <FormGroup>
             <Label htmlFor="dogImage">Photo</Label>
             <Input
@@ -100,6 +108,10 @@ class EditDog extends React.Component {
             value={dogImage}
             onChange={this.changeImageEvent} />
           </FormGroup>
+        </Col>
+      </Row>
+        <Row>
+        <Col md={6}>
           <FormGroup>
             <Label htmlFor="dogAge">Age</Label>
             <Input
@@ -109,6 +121,8 @@ class EditDog extends React.Component {
             value={dogAge}
             onChange={this.changeAgeEvent} />
           </FormGroup>
+        </Col>
+        <Col md={6}>
           <FormGroup>
             <Label htmlFor="dogBreed">Breed</Label>
             <Input
@@ -118,7 +132,9 @@ class EditDog extends React.Component {
             value={dogBreed}
             onChange={this.changeBreedEvent} />
           </FormGroup>
-          <Button className="btn btn-outline-warning" onClick={this.updateDogEvent}>Save</Button>
+        </Col>
+      </Row>
+          <Button className="savePet" onClick={this.updateDogEvent}><i className="fas fa-bone"></i></Button>
         </Form>
       </div>
     );
