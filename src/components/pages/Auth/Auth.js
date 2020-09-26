@@ -1,7 +1,15 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { Button } from 'reactstrap';
+import {
+  Button,
+  ButtonGroup,
+} from 'reactstrap';
+
+import { faCircle, faDog, faWater } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import './Auth.scss';
 
 class Auth extends React.Component {
   loginClickEvent = (e) => {
@@ -12,9 +20,25 @@ class Auth extends React.Component {
 
   render() {
     return (
-      <div className="Auth">
-        <Button className="btn btn-info" onClick={this.loginClickEvent}>Google Login</Button>
-      </div>
+      <div className="authContainer">
+        <h1 className="allLogoAuth">Dog
+          <span className="fa-layers fa-fw" transform="up-3">
+            <FontAwesomeIcon
+             icon={faWater}
+              mask={faCircle}
+               transform="down-4 shrink-2"
+                fixedWidth
+            />
+            <FontAwesomeIcon
+              icon={faDog}
+              transform="down-1.5 shrink-3.4"
+             />
+          </span>
+        Days</h1>
+        <ButtonGroup>
+          <Button className="googleAuth" onClick={this.loginClickEvent}>Google Login</Button>
+        </ButtonGroup>
+        </div>
     );
   }
 }
