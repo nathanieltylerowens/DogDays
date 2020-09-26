@@ -1,0 +1,54 @@
+$oxford-blue: #00142d;
+$usafa-blue: #125490;
+$fiery-rose: #fe5069;
+$mango: #fec32c;
+$maximum-purple: #75407c;
+$persian-green: #2a9d8f;
+
+// Sub-header: 'Montserrat Alternates', sans-serif;
+// Main Header: 'Josefin Slab', serif;
+
+.allLogoAuth {
+  color: #fec32c;
+  font-family: 'Josefin Slab', serif;
+  font-weight: 900;
+  font-size: 80pt;
+}
+.authContainer{
+  text-align: center;
+}
+
+.googleAuth {
+  background-color: transparent;
+  border-color: transparent;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 20pt;
+  color: #2a9d8f;
+}
+.googleAuth:hover {
+  background-color: transparent;
+  border-color: transparent;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 20pt;
+  color: #fec32c;
+  font-style: italic;
+}
+
+.googleAuth:focus {
+  background-color: transparent;
+  border-color: transparent;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 20pt;
+  color: #fec32c;
+  font-style: italic;
+}
+
+.fa-dog{
+  color:#75407c;
+}
+
+
+.fa-layers {
+  vertical-align: text-bottom;
+  font-size: 1.25em;
+}

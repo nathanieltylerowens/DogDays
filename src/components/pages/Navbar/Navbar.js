@@ -78,6 +78,7 @@ class myNavbar extends React.Component {
             />
           </span>
         Days</NavbarBrand>
+
           <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>
           {buildNavbar()}
