@@ -1,0 +1,19 @@
+$oxford-blue: #00142d;
+$usafa-blue: #125490;
+$fiery-rose: #fe5069;
+$mango: #fec32c;
+$maximum-purple: #75407c;
+$persian-green: #2a9d8f;
+
+// Sub-header: 'Montserrat Alternates', sans-serif;
+// Main Header: 'Josefin Slab', serif;
+
+.Home h1{
+  font-family: 'Josefin Slab', serif;
+  font-weight: 900;
+  color: $maximum-purple;
+  font-size: 50pt;
+}
+.card-deck {
+  justify-content: center;
+}

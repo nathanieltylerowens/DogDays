@@ -1,0 +1,59 @@
+$oxford-blue: #00142d;
+$usafa-blue: #125490;
+$fiery-rose: #fe5069;
+$mango: #fec32c;
+$maximum-purple: #75407c;
+$persian-green: #2a9d8f;
+
+// Sub-header: 'Montserrat Alternates', sans-serif;
+// Main Header: 'Josefin Slab', serif;
+.homeCardBody{
+  background-color: transparent;
+  padding: 0px;
+}
+.homeCard{
+  border: transparent;
+  background-color: transparent;
+}
+.homeImage{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 325px;
+  height: 325px;
+}
+
+.homeName{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 650;
+  color:#fe5069;
+  font-size: 35pt;
+  letter-spacing: 3.75px;
+}
+
+.homeEdit{
+  background-color: transparent;
+  border: transparent;
+  color: #2a9d8f;
+}
+.homeEdit:hover{
+  background-color: transparent;
+  border: transparent;
+  color:  #fec32c;
+  font-style: italic;
+}
+
+.homeDelete{
+  background-color: transparent;
+  border: transparent;
+  color: #2a9d8f;
+}
+.homeDelete:hover{
+  background-color: transparent;
+  border: transparent;
+  color:  #fec32c;
+  font-style: italic;
+}

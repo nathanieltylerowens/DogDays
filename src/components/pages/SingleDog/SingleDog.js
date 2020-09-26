@@ -132,7 +132,7 @@ class SingleDog extends React.Component {
     return (
       <div className="SingleDog">
         <h1>{dog.dogName}</h1>
-        <Col sm="12" md={{ size: 6, offset: 3 }}>
+        <Col>
           <Card>
             <CardImg top width="40%" src={dog.dogImage} alt="Card image cap" />
               <CardBody>
