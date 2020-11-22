@@ -1,71 +1,38 @@
-Deployed at:
-https://dog-days-763e0.web.app
+# Dog Days
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Front End Capstone
+### Nashville Software School, Evening Cohort 12 
 
-## Available Scripts
+**Dog Days** Dog Days is the final project for the front-end class of NSS. It was created as a one stop app for a dog owner to be able to track a dog’s exercise, feeding, bathroom, and grooming.
 
-In the project directory, you can run:
+## Features:
+1. User Auth with Google. 
+1. Displays the users dogs when logged in.
+1. User can add their own dogs, includes name, age, breed, and photo.
+1. User can update each category for each dog. 
+1. Project uses HTML, sCSS, JS, Reactstrap, Moment JS, Datepicker, Firebase, Axios
 
-### `npm start`
+## Screenshots:
+#### User's Dogs: 
+![User's Dogs](screenshots/dogdays mydogs.jpg)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Dog Profile: 
+![Dog Profile](screenshots/dogdays dogprofile.jpg)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Edit/Add Dog:
+![Edit/Add Dog](screenshots/dogday editdog.jpg)
 
-### `npm test`
+#### Food Update
+![Preview](screenshots/dogdays food.jpg)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Bathroom Update
+![Preview](screenshots/dogdays potty.jpg)
 
-### `npm run build`
+#### Exercise Update
+![Preview](screenshots/dogdays exercise.jpg)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Grooming Update
+![Preview](screenshots/dogdays grooming.jpg)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## How to Run
+>Deployed at: https://dog-days-763e0.web.app
