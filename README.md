@@ -14,25 +14,25 @@
 
 ## Screenshots:
 #### User's Dogs: 
-![User's Dogs](screenshots/dogdays mydogs.jpg)
+![Mainview](screenshots/dogdays mydogs.jpg)
 
 #### Dog Profile: 
-![Dog Profile](screenshots/dogdays dogprofile.jpg)
+![Mainview]](screenshots/dogdays dogprofile.jpg)
 
 #### Edit/Add Dog:
-![Edit/Add Dog](screenshots/dogday editdog.jpg)
+![Mainview]](screenshots/dogday editdog.jpg)
 
 #### Food Update
-![Preview](screenshots/dogdays food.jpg)
+![Mainview]](screenshots/dogdays food.jpg)
 
 #### Bathroom Update
-![Preview](screenshots/dogdays potty.jpg)
+![Mainview]](screenshots/dogdays potty.jpg)
 
 #### Exercise Update
-![Preview](screenshots/dogdays exercise.jpg)
+![Mainview]](screenshots/dogdays exercise.jpg)
 
 #### Grooming Update
-![Preview](screenshots/dogdays grooming.jpg)
+![Mainview]](screenshots/dogdays grooming.jpg)
 
 ## How to Run
 >Deployed at: https://dog-days-763e0.web.app
