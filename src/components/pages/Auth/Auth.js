@@ -35,6 +35,12 @@ class Auth extends React.Component {
              />
           </span>
         Days</h1>
+        <p className="authWelcome">
+          Welcome to Dog Days!
+        </p>
+        <p className="authWelcome">
+          Before we help you keep track of your pups health, go ahead and register below.
+        </p>
         <ButtonGroup>
           <Button className="googleAuth" onClick={this.loginClickEvent}>Google Login</Button>
         </ButtonGroup>
